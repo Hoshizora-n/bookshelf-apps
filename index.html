@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Bookshelf Apps</title>
+        <link rel="stylesheet" href="css/editModal.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Bookshelf Apps</h1>
+        </header>
+
+        <!-- Modal content -->
+        <div id="edit-modal">
+            <div class="edit-section">
+                <!-- <form id="editBook">
+                    <div class="edit-header">
+                        <h2>Edit</h2>
+                        <h3 id="close-modal">&times;</h3>
+                    </div>
+                    <div class="edit">
+                        <label for="editBookTitle">Judul</label>
+                        <input id="editBookTitle" type="text" required />
+                    </div>
+                    <div class="edit">
+                        <label for="editBookAuthor">Penulis</label>
+                        <input id="editBookAuthor" type="text" required />
+                    </div>
+                    <div class="edit">
+                        <label for="editBookYear">Tahun</label>
+                        <input id="editBookYear" type="number" required />
+                    </div>
+                    <button id="bookSubmitEdit" type="submit">Selesai Edit Buku</button>
+                </form> -->
+            </div>
+        </div>
+
+        <main>
+            <aside class="input_section">
+                <h2>Masukkan Buku Baru</h2>
+                <form id="inputBook">
+                    <div class="input">
+                        <label for="inputBookTitle">Judul</label>
+                        <input id="inputBookTitle" type="text" required />
+                    </div>
+                    <div class="input">
+                        <label for="inputBookAuthor">Penulis</label>
+                        <input id="inputBookAuthor" type="text" required />
+                    </div>
+                    <div class="input">
+                        <label for="inputBookYear">Tahun</label>
+                        <input id="inputBookYear" type="number" required />
+                    </div>
+                    <div>
+                        <label for="inputBookIsComplete">Selesai dibaca</label>
+                        <input id="inputBookIsComplete" type="checkbox" />
+                    </div>
+                    <button id="bookSubmit" type="submit">Masukkan Buku ke rak Belum selesai dibaca</button>
+                </form>
+            </aside>
+
+            <div class="books">
+                <section class="search_section">
+                    <h2>Cari Buku</h2>
+                    <form id="searchBook">
+                        <label for="searchBookTitle">Judul:</label>
+                        <input id="searchBookTitle" type="text" />
+                        <div id="search-icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="searchIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="book_shelf">
+                    <h2>Belum selesai dibaca</h2>
+
+                    <div id="incompleteBookshelfList" class="book_list">
+                        <!-- <article class="book_item">
+                            <div class="idBuku">732644776235476</div>
+                            <div class="bookProperties">
+                                <div class="idBuku">${book.id}</div>
+                                <div class="judul">
+                                    <p>Judul</p>
+                                    <p class="judulBuku" style="font-weight: bold;">${book.title}</p style="font-weight: bold;">
+                                </div>
+                                <div class="penulis">
+                                    <p>Penulis</p>
+                                    <p class="penulisBuku">${book.author}</p>
+                                </div>
+                                <div class="tahun">
+                                    <p>Tahun</p>
+                                    <p class="tahunBuku">${book.year}</p>
+                                </div>
+                            </div>
+
+                            <div class="action">
+                                <button class="done">Selesai dibaca</button>
+                                <button class="edit">Edit</button>
+                                <button class="delete">Hapus buku</button>
+                            </div>
+                        </article> -->
+                    </div>
+                </section>
+
+                <section class="book_shelf">
+                    <h2>Selesai dibaca</h2>
+
+                    <div id="completeBookshelfList" class="book_list">
+                        <!-- <article class="book_item">
+                            <div class="idBuku">732644776235476</div>
+                            <div class="bookProperties">
+                                <div class="idBuku">${book.id}</div>
+                                <div class="judul">
+                                    <p>Judul</p>
+                                    <p class="judulBuku" style="font-weight: bold;">${book.title}</p style="font-weight: bold;">
+                                </div>
+                                <div class="penulis">
+                                    <p>Penulis</p>
+                                    <p class="penulisBuku">${book.author}</p>
+                                </div>
+                                <div class="tahun">
+                                    <p>Tahun</p>
+                                    <p class="tahunBuku">${book.year}</p>
+                                </div>
+                            </div>
+
+                            <div class="action">
+                                <button class="undone">Belum selesai dibaca</button>
+                                <button class="edit">Edit</button>
+                                <button class="delete">Hapus buku</button>
+                            </div>
+                        </article> -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="js/functions.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
